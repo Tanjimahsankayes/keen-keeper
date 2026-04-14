@@ -2,7 +2,6 @@ import React from 'react';
 import { TiHomeOutline } from 'react-icons/ti';
 import { RiTimeLine } from "react-icons/ri";
 import { LuChartLine } from "react-icons/lu";
-
 import { NavLink } from 'react-router';
 
 
@@ -11,13 +10,44 @@ const Navbar = () => {
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <a className="btn btn-ghost text-xl">
-            <span className='font-bold' >Keen</span>Keeper
+            <span className="font-bold">Keen</span>Keeper
           </a>
         </div>
         <div className="navbar-end gap-2 ">
-          <NavLink className="btn"> <span> <TiHomeOutline></TiHomeOutline> </span> Home</NavLink>
-          <NavLink className="btn"> <span> <RiTimeLine /> </span> Timeline</NavLink>
-          <NavLink className="btn"> <span> <LuChartLine /> </span> States</NavLink>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => `
+          btn  ${isActive ? "bg-[#244D3F] text-white " : ""}
+          `}
+          >
+            <span>
+              <TiHomeOutline></TiHomeOutline>
+            </span>
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/timeline"
+            className={({ isActive }) => `
+          btn ${isActive ? " bg-[#244D3F] text-white " : ""}
+          `}
+          >
+            <span>
+              <RiTimeLine />
+            </span>
+            Timeline
+          </NavLink>
+          <NavLink
+            to="/states"
+            className={({ isActive }) => `
+          btn ${isActive ? "bg-[#244D3F] text-white" : ""}
+          `}
+          >
+            <span>
+              <LuChartLine />
+            </span>
+            States
+          </NavLink>
         </div>
       </div>
     );
