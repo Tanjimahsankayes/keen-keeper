@@ -3,17 +3,18 @@ import { TiHomeOutline } from 'react-icons/ti';
 import { RiTimeLine } from "react-icons/ri";
 import { LuChartLine } from "react-icons/lu";
 import { NavLink } from 'react-router';
+import Logo from '../../assets/logo.png'
 
 
 const Navbar = () => {
     return (
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm  px-4 flex flex-col md:flex-row md:justify-between md:items-center gap-3">
         <div className="navbar-start">
           <a className="btn btn-ghost text-xl">
-            <span className="font-bold">Keen</span>Keeper
+            <img src={Logo} alt="Logo" />
           </a>
         </div>
-        <div className="navbar-end gap-2 ">
+        <div className="navbar-center md:navbar-end gap-2 ">
           <NavLink
             to={"/"}
             className={({ isActive }) => `

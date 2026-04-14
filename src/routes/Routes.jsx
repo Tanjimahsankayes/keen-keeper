@@ -5,6 +5,7 @@ import Banner from "../Components/State/States";
 import Errorpage from "../Pages/ErrorPage/Errorpage";
 import States from "../Components/State/States";
 import Timeline from "../Components/Timeline/Timeline";
+import FriendDetails from "../Pages/FriendDetails/FriendDetails";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path : "/timeline",
         element : <Timeline></Timeline>
+      },
+      {
+        path : "/frienddetails/:id",
+        element : <FriendDetails></FriendDetails>
       }
     ],
     errorElement:<Errorpage></Errorpage>
