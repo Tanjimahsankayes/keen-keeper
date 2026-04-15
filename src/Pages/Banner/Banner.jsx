@@ -21,19 +21,19 @@ const Banner = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10 w-full mx-auto pt-4 justify-center ">
           <div className="p-10 rounded-md bg-base-100 shadow-xl  ">
-            <h4>10</h4>
+            <h4 className="font-bold text-2xl">10</h4>
             <h3>Total Friends</h3>
           </div>
           <div className="p-10 rounded-md bg-base-100 shadow-xl ">
-            <h4>10</h4>
+            <h4 className="font-bold text-2xl">3</h4>
             <h3>On Track</h3>
           </div>
           <div className="p-10 rounded-md bg-base-100 shadow-xl">
-            <h4>10</h4>
+            <h4 className="font-bold text-2xl">6</h4>
             <h3>Need Attention</h3>
           </div>
           <div className="p-10 rounded-md bg-base-100 shadow-xl ">
-            <h4>10</h4>
+            <h4 className="font-bold text-2xl">12</h4>
             <h3>Interactions This Month</h3>
           </div>
         </div>

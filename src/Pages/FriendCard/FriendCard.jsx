@@ -14,7 +14,7 @@ const FriendCard = ({ friends }) => {
         <div className="flex items-center justify-center ">
           <img src={friends.picture} alt="" className="rounded-full" />
         </div>
-        <h2 className="text-2xl font-bold"> {friends.name} </h2>
+        <h2 className="text-xl font-bold"> {friends.name} </h2>
         <p> {friends.days_since_contact} </p>
         <div className="flex flex-col gap-2">
           <button className="bg-green-300 rounded-full font-semibold text-xl p-2">
