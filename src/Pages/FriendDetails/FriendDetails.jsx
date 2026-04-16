@@ -1,28 +1,58 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { MdNotificationsPaused } from "react-icons/md";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import { MdNotificationsPaused, MdVideoCall } from "react-icons/md";
 import { FaArchive } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import Call from "../../assets/call.png";
-import Text from "../../assets/text.png";
-import Video from "../../assets/video.png";
+import { MdAddIcCall } from "react-icons/md";
 import { FaHistory } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { FriendCallContext } from "../../Components/Context/FriendContext";
+import { AiFillMessage } from "react-icons/ai";
 
 const FriendDetails = () => {
-  
+  const navigate = useNavigate();
   const { id } = useParams();
   const [friends, setFriends] = useState([]);
+
+  const { friendCall, setCallFriend } = useContext(FriendCallContext);
+
+  const handleAction = (type) => {
+    if (!Friend) return;
+
+    const newEntry = {
+      ...Friend,
+      type,
+      time: new Date(),
+    };
+
+    setCallFriend((prev) => [...prev, newEntry]);
+
+    if (type === "Call") {
+      toast.success(`Calling ${Friend.name}...`);
+    } else if (type === "Text") {
+      toast.success(`Message sent to ${Friend.name}`);
+    } else if (type === "Video") {
+      toast.success(`Starting video call with ${Friend.name}`);
+    }
+
+    navigate("/timeline");
+  };
+
+  console.log(friendCall);
+
   useEffect(() => {
     fetch("/Data.json")
       .then((res) => res.json())
       .then((data) => setFriends(data));
   }, []);
+
+
   const Friend = friends.find((friend) => friend.id === parseInt(id));
 
   if (!Friend) {
     return <div>Loading...</div>;
   }
+
 
   return (
     <div className="w-11/12 md:w-8/12 mx-auto md:grid md:grid-cols-6 gap-8 mt-15 ">
@@ -96,26 +126,24 @@ const FriendDetails = () => {
           <h2 className="text-2xl font-semibold mb-4">Quick Check-In</h2>
           <div className="flex gap-4">
             <div
-              onClick={() => toast.success(`Calling ${Friend.name}...`)}
-              className="bg-base-200 p-4 rounded-md text-center flex flex-col gap-2 items-center w-full font-semibold text-xl cursor-pointer"
+              onClick={() => handleAction("Call")}
+              className="bg-base-200 p-5 rounded-md text-center flex flex-col gap-2 items-center w-full font-semibold text-xl cursor-pointer"
             >
-              <img src={Call} alt="" className="h-8 w-8 " />
+              <MdAddIcCall className="w-8 h-8" />
               <h3>Call</h3>
             </div>
             <div
-              onClick={() => toast.success(`Sent Message ${Friend.name}...`)}
-              className="bg-base-200 p-4 rounded-md text-center flex flex-col gap-2 items-center w-full font-semibold text-xl cursor-pointer"
+              onClick={() => handleAction("Text")}
+              className="bg-base-200 p-5 rounded-md text-center flex flex-col gap-2 items-center w-full font-semibold text-xl cursor-pointer"
             >
-              <img src={Text} alt="" className="h-8 w-8" />
+              <AiFillMessage className="w-8 h-8" />
               <h3> Text </h3>
             </div>
             <div
-              onClick={() =>
-                toast.success(`Starting Video Call ${Friend.name}...`)
-              }
-              className="bg-base-200 p-4 rounded-md text-center flex flex-col gap-2 items-center w-full font-semibold text-xl cursor-pointer"
+              onClick={() => handleAction("Video")}
+              className="bg-base-200 p-5 rounded-md text-center flex flex-col gap-2 items-center w-full font-semibold text-xl cursor-pointer"
             >
-              <img src={Video} alt="" className="h-8 w-8" />
+              <MdVideoCall className="w-8 h-8" />
               <h3>Video</h3>
             </div>
           </div>
