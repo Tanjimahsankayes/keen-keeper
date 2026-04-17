@@ -17,10 +17,23 @@ const FriendCard = ({ friends }) => {
         <h2 className="text-xl font-bold"> {friends.name} </h2>
         <p> {friends.days_since_contact} </p>
         <div className="flex flex-col gap-2">
-          <button className="bg-green-300 rounded-full font-semibold text-xl p-2">
-            {friends.tags[0]}
-          </button>
-          <button className="btn bg-amber-300 rounded-full text-white">
+          <div className="flex gap-2 justify-around ">
+            {friends.tags.map((tag, index) => (
+              <button
+                key={index}
+                className="bg-green-200 rounded-full font-semibold text-md px-2"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+          <button
+            className={`btn rounded-full text-white ${
+              friends.status === "overdue"
+                ? "bg-green-500"
+                : friends.status === "on-track" ? "bg-blue-500" : "bg-red-500"
+            }`}
+          >
             {friends.status}
           </button>
         </div>
