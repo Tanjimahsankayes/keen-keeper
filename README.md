@@ -26,9 +26,25 @@ Overall, Keen Keeper combines real-time interaction tracking, visual analytics, 
 </ul>
 
 <h3>3 key features :</h3>
-Dynamic Friend Interaction System
-Users can view friends in card format, and clicking on any card opens a detailed page where they can perform actions like Text, Call, and Video Call.
-Real-time Activity Tracking with Timeline
-Every interaction (text, call, video call) is instantly recorded in a timeline with toast notifications showing the friend’s name, making activity tracking clear and interactive.
-Data Visualization using Recharts Pie Chart
-All timeline activities are visually represented using a Pie Chart, giving a quick and clear breakdown of user interactions in an easy-to-understand format.
+
+<ul>
+  <li>
+    <h4>Dynamic Friend Interaction System</h4>
+    <p>Users can view friends in card format, and clicking on any card opens a detailed page where they can perform actions like Text, Call, and Video Call.</p>
+  </li>
+  <li>
+     <h4>Real-time Activity Tracking with Timeline</h4>
+    <p>Every interaction (text, call, video call) is instantly recorded in a timeline with toast notifications showing the friend’s name, making activity tracking clear and interactive.</p>
+  </li>
+  <li>
+    <h4>
+Data Visualization using Recharts Pie Chart</h4>
+    <p>All timeline activities are visually represented using a Pie Chart, giving a quick and clear breakdown of user interactions in an easy-to-understand format.</p>
+  </li>
+</ul>
+
+
+
+
+
+
