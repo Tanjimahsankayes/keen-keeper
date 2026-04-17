@@ -14,6 +14,8 @@ const Timeline = () => {
     return null;
   }
 
+  
+
   return (
     <div className="w-8/12 mx-auto">
       <h1 className="text-3xl font-bold my-6">Timeline</h1>

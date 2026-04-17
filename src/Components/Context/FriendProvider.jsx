@@ -3,7 +3,11 @@ import { FriendCallContext } from './FriendContext';
 
 const FriendProvider = ({children}) => {
 
-    const [friendCall, setCallFriend] = useState([]);
+    const [friendCall, setCallFriend] = useState([
+      { name: "Call", value: 0 },
+      { name: "Text", value: 0 },
+      { name: "VideoCall", value: 0 },
+    ]);
 
     const data = {
         friendCall,
