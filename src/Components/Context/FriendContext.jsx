@@ -1,4 +1,4 @@
 import { createContext } from "react";
 
 
-export const FriendCallContext = createContext();
+export const FriendCallContext = createContext(null);
