@@ -13,17 +13,19 @@ The application also includes a fully functional navigation bar with Home, Timel
 
 Overall, Keen Keeper combines real-time interaction tracking, visual analytics, and clean UI design to deliver an engaging social activity management experience.
 
-Technologies :
-React
-React Icons
-React Router
-API
-Tailwind
-DaisyUI
-Netlify
-Vercel
+<h3> Technologies :</h3>
+<ul>
+  <li> React</li>
+  <li> React Icons</li>
+  <li>React Router</li>
+  <li>API</li>
+  <li>Tailwind</li>
+  <li>DaisyUI</li>
+  <li>Netlify</li>
+  <li>Vercel</li>
+</ul>
 
-3 key features :
+<h3>3 key features :</h3>
 Dynamic Friend Interaction System
 Users can view friends in card format, and clicking on any card opens a detailed page where they can perform actions like Text, Call, and Video Call.
 Real-time Activity Tracking with Timeline
