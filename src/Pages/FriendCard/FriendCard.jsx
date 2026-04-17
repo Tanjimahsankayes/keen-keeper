@@ -21,7 +21,7 @@ const FriendCard = ({ friends }) => {
             {friends.tags.map((tag, index) => (
               <button
                 key={index}
-                className="bg-green-200 rounded-full font-semibold text-md px-2"
+                className="bg-green-200 rounded-full font-semibold text-sm px-2"
               >
                 {tag}
               </button>
